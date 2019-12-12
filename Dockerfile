@@ -17,6 +17,7 @@ RUN  apt-get update \ \
      && wget --quiet https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh -O /usr/sbin/wait-for-it.sh \
      && chmod +x /usr/sbin/wait-for-it.sh \
      && apt-get update \
+     # Install "ps" command because alpine doesn't have it to prevent "Error: spawn ps ENOENT"
      && apt-get -y install procps
 
 # Install Puppeteer under /node_modules so it's available system-wide
